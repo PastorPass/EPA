@@ -1,0 +1,28 @@
+programa CAP6ejemplo2v4
+procesos
+  proceso Torre (E lado:numero)
+  comenzar
+    repetir 4
+      repetir lado
+        mover
+      derecha
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    long:numero
+  comenzar
+    long:=18
+    repetir 9
+      Torre(long)
+      Pos(PosAv+1,PosCa+long)
+      long:=long - 2
+  fin
+variables
+  R-info:robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin

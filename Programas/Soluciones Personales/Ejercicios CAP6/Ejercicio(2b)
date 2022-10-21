@@ -1,0 +1,28 @@
+programa MuchosCuadradosV1
+procesos
+  proceso cuadrado (E lado:numero)
+  comenzar
+    repetir 4
+      repetir lado
+        mover
+      derecha
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    largo:numero
+  comenzar
+    largo:=1
+    repetir 5
+      cuadrado(largo)
+      Pos(PosAv+largo,1)
+      largo:=largo+1
+  fin
+variables
+  R-info:robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin

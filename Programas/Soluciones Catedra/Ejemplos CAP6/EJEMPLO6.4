@@ -1,0 +1,33 @@
+programa Ejercitacion.d1.a
+procesos
+  proceso Rectangulo (E base:numero; E altura:numero)
+  comenzar
+    repetir 2
+      repetir altura
+        mover
+      derecha
+      repetir base
+        mover
+      derecha
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    ancho,alto:numero
+  comenzar
+    ancho:=19
+    alto:=5
+    repetir 5
+      Rectangulo(ancho,alto)
+      Pos(PosAv+2,PosCa+alto)
+      ancho:=ancho - 4
+      alto:=alto - 1
+  fin
+variables
+  R-info:robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin

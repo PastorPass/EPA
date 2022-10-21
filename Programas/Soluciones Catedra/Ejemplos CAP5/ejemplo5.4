@@ -1,0 +1,53 @@
+programa CAP5ejemplo5d
+procesos
+  proceso JuntarFlores
+  comenzar
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+  fin
+  proceso JuntarPapeles
+  comenzar
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+  fin
+  proceso DejarFlores
+  comenzar
+    mientras(HayFlorEnLaBolsa)
+      depositarFlor
+  fin
+  proceso DejarPapeles
+  comenzar
+    mientras(HayPapelEnLaBolsa)
+      depositarPapel
+  fin
+  proceso RealizarAvenidaPar
+  comenzar
+    repetir 99
+      JuntarPapeles
+      mover
+    DejarPapeles
+  fin
+  proceso RealizarAvenidaImpar
+  comenzar
+    repetir 99
+      JuntarFlores
+      mover
+    DejarFlores
+  fin  
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 25
+      RealizarAvenidaImpar
+      Pos(PosAv+1,1)
+      RealizarAvenidaPar
+      Pos(PosAv+1,1)
+  fin
+variables
+  R-info:robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin

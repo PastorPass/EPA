@@ -1,0 +1,24 @@
+programa CAP4ejercitacion2
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    Pos(1,45)
+    derecha
+    si(HayPapelEnLaBolsa)
+      depositarPapel
+    mientras(PosAv<100)
+      mover
+      si(HayFlorEnLaBolsa)
+        depositarFlor
+      si(HayPapelEnLaBolsa)
+        mover
+        depositarPapel      
+  fin
+variables
+  R-info:robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin

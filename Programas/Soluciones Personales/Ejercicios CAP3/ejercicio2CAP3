@@ -1,0 +1,23 @@
+programa Quehace2
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    cantFlores:numero
+  comenzar
+    Pos(1,44)
+    derecha
+    mientras(PosAv<100)
+      mover
+      mientras(HayFlorEnLaEsquina)
+        tomarFlor
+        cantFlores:=cantFlores+1
+    Informar(cantFlores)
+  fin
+variables
+  R-info:robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin

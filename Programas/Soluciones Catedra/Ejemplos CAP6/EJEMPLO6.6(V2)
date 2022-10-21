@@ -1,0 +1,26 @@
+programa CAP6ejemplo6
+procesos
+  proceso UnaMenosV2(E FloresIniciales:numero)
+  variables
+    cuantas:numero
+  comenzar
+    cuantas:=FloresIniciales
+    mientras(PosCa<11)
+      repetir cuantas
+        depositarFlor
+      mover
+      cuantas:=cuantas - 1
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    UnaMenosV2(10)
+  fin
+variables
+  R-info:robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin

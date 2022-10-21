@@ -1,0 +1,32 @@
+programa CAP4ejercitacion2
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    cantF:numero
+    cantP:numero
+  comenzar
+    cantF:=0
+    cantP:=0
+    Pos(1,20)
+    derecha
+    si(HayFlorEnLaEsquina)&~(HayPapelEnLaEsquina)
+      cantF:=cantF+1
+    si(HayPapelEnLaEsquina)&~(HayFlorEnLaEsquina)
+      cantP:=cantP+1
+    mientras(PosAv<100)
+      mover
+      si(HayFlorEnLaEsquina)&~(HayPapelEnLaEsquina)
+        cantF:=cantF+1
+      si(HayPapelEnLaEsquina)&~(HayFlorEnLaEsquina)
+        cantP:=cantP+1
+    Informar(cantP)
+    Informar(cantF)
+  fin
+variables
+  R-info:robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin

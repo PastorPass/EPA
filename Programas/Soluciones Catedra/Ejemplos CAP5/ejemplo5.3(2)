@@ -1,0 +1,32 @@
+programa CAP5ejemplo5b
+procesos
+  proceso JuntarFlores
+  comenzar
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+  fin
+  proceso JuntarPapeles
+  comenzar
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 10
+      repetir 99
+        JuntarFlores
+        JuntarPapeles
+        mover
+      JuntarFlores
+      JuntarPapeles
+      Pos(PosAv+1,1)
+  fin
+variables
+  R-info:robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin

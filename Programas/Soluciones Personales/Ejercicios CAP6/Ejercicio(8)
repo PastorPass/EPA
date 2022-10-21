@@ -1,0 +1,26 @@
+programa CAP6ejercicio8
+procesos
+  proceso RecorrerAvenida (E IndiceAv:numero; E NumeroDePasos:numero)
+  comenzar
+    Pos(IndiceAv,1)
+    si((NumeroDePasos<100)&(NumeroDePasos>0))
+      repetir NumeroDePasos
+        mover
+    sino
+      si(NumeroDePasos>99)
+        repetir 99
+          mover
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    RecorrerAvenida(10,10)
+  fin
+variables
+  R-info:robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin

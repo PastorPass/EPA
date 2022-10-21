@@ -1,0 +1,43 @@
+programa CAP5ejemplo5e
+procesos
+  proceso Evaluar
+  variables
+    cantF:numero
+    cantP:numero
+  comenzar
+    cantF:=0
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+      cantF:=cantF+1
+    cantP:=0
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+      cantP:=cantP+1
+    si(cantF>cantP)
+      si(HayFlorEnLaBolsa)
+        depositarFlor
+      sino
+        si(cantF=cantP)
+          si(HayFlorEnLaBolsa)&(HayPapelEnLaBolsa)
+            depositarFlor
+            depositarPapel
+          sino
+            si(HayPapelEnLaBolsa)
+              depositarPapel
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 99
+      Evaluar
+      mover
+    Evaluar
+  fin
+variables
+  R-info:robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin
